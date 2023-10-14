@@ -1,27 +1,27 @@
-let productCard = [
+const productCard = [
   {
     name: 'Summer Dress 1',
     image: 'dress-2.avif',
-    price: R950,
+    price: 950,
   },
   {
     name: 'Summer Dress 2',
     image: 'dress-2.avif',
-    price: R950,
+    price: 950,
   },
   {
     name: 'Summer Dress 3',
     image: 'dress-2.avif',
-    price: R950,
+    price: 950,
   },
   {
     name: 'Summer Dress 4',
     image: 'dress-2.avif',
-    price: R950,
+    price: 950,
   },
 ];
 
-const catergories = [
+/* const catergories = [
   ...new Set(
     productCard.map((item) => {
       return item;
@@ -40,4 +40,10 @@ document.getElementById('product-card').innerHTML = catergories.map((item) => {
     <button class="add-to-cart">Add to cart</button>
   </div>
     `;
-});
+}); */
+
+const cart = [];
+
+cart.push(productCard);
+
+console.log(cart);
