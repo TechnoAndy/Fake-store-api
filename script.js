@@ -53,8 +53,8 @@ total_price = cart_items.reduce((total, item) => total + item.price * item.quant
 console.log('Total Price:', total_price);
 
 document.getElementById('checkOut').addEventListener('click', function() {
-  /* let quantity = parseInt(document.getElementById('quantity').value);
+  let quantity = parseInt(document.getElementById('quantity').value);
   let price = parseInt(document.getElementById('price').value);
-  let total = quantity * price; */
+  let total = quantity * price;
   document.getElementById('total').value = 'R' + total;
 });
