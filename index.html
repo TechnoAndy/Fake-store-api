@@ -11,41 +11,27 @@
 <body>
   <div class="header">
     <p class="logo">Graceful Attire Co.</p>
-    <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count">0</p></div>
+    <div class="cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <p class="count">0</p>
+    </div>
   </div>
-  <div id="productsContainer">
+
+  <div class="productsContainer">
     <div id="products">
-      <div class="product-card">
-        <h2>Summer dress 1</h2>
-        <img src="./images/dress-2.avif" alt="dress-1" width="200">
-        <div class="price">R 650</div>
-        <button class="add-to-cart" data-name="Summer dress 2" data-price="650">Add to cart</button>
-      </div>
-      <div class="product-card">
-        <h2>Summer dress 2</h2>
-        <img src="./images/dress-2.avif" alt="dress-1" width="200">
-        <div class="price">R 800</div>
-        <button class="add-to-cart">Add to cart</button>
-      </div>
-      <div class="product-card">
-        <h2>Summer dress 3</h2>
-        <img src="./images/dress-2.avif" alt="dress-1" width="200">
-        <div class="price">R 950</div>
-        <button class="add-to-cart">Add to cart</button>
-      </div>
+
     </div>
-    <div class="sidebar">
-      <div class="head"><p>My Cart</p></div>
-      <div id="cartItem">Your cart is empty</div>
-      <div class="foot">
-        <h3>Total</h3>
-        <h3 id="total">R 0.00</h3>
-        <div class="btn">
-        <button class="close">CLOSE</button>
-        <button class="checkOut">Check Out</button>
-      </div>
-      </div>
+  </div>
+
+  <div class="sidebar">
+    <h1 class="head">Cart</h1>
+    <ul class="listCard"></ul>
+    <div class="checkOut">
+      <div class="total">0</div>
+      <div class="closeCart">Close</div>
     </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

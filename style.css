@@ -50,31 +50,39 @@ body {
 }
 
 .sidebar{
-  width: 400px;
-  max-height: 80vh;
-  border-radius: 5px;
-  background-color: #eee;
-  margin-left: 20px;
-  padding: 15px;
-  text-align: center;
-  /* position: fixed; */
-  inset: 0 0 0 auto;
+  position: fixed;
+  top:0;
+  left: 10%;
+  width: 500px;
+  height: 100vh;
+  background-color: #fff ;
+  transition: 0.5s;
   display: grid;
   grid-template-rows: 70px 1fr 70px;
 }
 
-.sidebar .btn {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.active .cart{
+  left: calc(100% - 1000px)
 }
 
-.sidebar button {
+.active .sidebar{
+  transform: translateX(1000px);
+}
+
+/* .sidebar .btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+} */
+
+.sidebar div {
   background-color: rgba(171, 15, 142, 0.8);
   border: 2px solid;
   border-radius: 10px;
   color: #fff;
   font-size: 16px;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .head {
