@@ -32,12 +32,6 @@ let products = [
     image: '../images/1.png',
     price: 1200
   },
-  {
-    id: 3,
-    name: 'Summer Dress',
-    image: '../images/1.png',
-    price: 1200
-  },
 ];
 
 let cardList = [];

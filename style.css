@@ -17,7 +17,7 @@ body {
 
 .header {
   height: 80px;
-  width: 70%;
+  width: 80%;
   background-color: #333;
   border-radius: 3px;
   margin: 30px 0;
@@ -37,7 +37,8 @@ body {
 
 .productsContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+
 }
 
 .product-card button {
