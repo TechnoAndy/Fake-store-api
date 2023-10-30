@@ -23,13 +23,19 @@ let products = [
   {
     id: 2,
     name: 'Summer Dress',
-    image: '../images/2.png',
+    image: '../images/1.png',
     price: 8500
   },
   {
     id: 3,
     name: 'Summer Dress',
-    image: '../images/3.png',
+    image: '../images/1.png',
+    price: 1200
+  },
+  {
+    id: 3,
+    name: 'Summer Dress',
+    image: '../images/1.png',
     price: 1200
   },
 ];
@@ -38,12 +44,12 @@ let cardList = [];
 function createCard(){
   products.forEach((value, key) => {
     let newDiv = document.createElement('div');
-    newDiv.classList.add('card');
+    newDiv.classList.add('product-card');
     newDiv.innerHTML = `
     <img src = "image/${value.image}">
     <div class="title">${value.name}</div>
     <div class="price">${value.price.toLocaleString()}</div>
-    <button onclick="addToCard(${key})">Add To Card</button>`;
+    <button onclick="addToCard(${key})">Add To Cart</button>`;
     list.appendChild(newDiv);
   })
 }
