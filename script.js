@@ -23,13 +23,13 @@ let products = [
   {
     id: 2,
     name: 'Summer Dress',
-    image: '../images/1.png',
+    image: '../images/2.png',
     price: 8500
   },
   {
     id: 3,
     name: 'Summer Dress',
-    image: '../images/1.png',
+    image: '../images/3.png',
     price: 1200
   },
 ];
