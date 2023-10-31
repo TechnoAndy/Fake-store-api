@@ -97,8 +97,19 @@ function addToCard(key) {
     let totalPrice = 0;
     cardList.forEach((value, key) => {
       if (value) { // Check if the value is not null or undefined
-        totalPrice = totalPrice + (value.price || 0); // Use a default value if price is missing
-        count = count + (value.quantity || 0); // Use a default value if quantity is missing
+        const availableStock = products[key].instock || 0;
+        let displayQuantity = value.quantity;
+
+        if(value.quantity > availableStock) {
+          alert("Sorry, this items exceeds the available stock.");
+
+          displayQuantity = availableStock;
+          value.quantity = displayQuantity;
+        }
+
+        totalPrice = totalPrice + (value.price || 0) * displayQuantity; // Use a default value if price is missing
+        count = count + displayQuantity; // Use a default value if quantity is missing
+
         let newDiv = document.createElement('li');
         newDiv.innerHTML = `
           <div><img src="image/${value.image || ''}"/></div>
@@ -116,6 +127,7 @@ function addToCard(key) {
     quantity.innerText = count;
 
     localStorage.setItem("CART", JSON.stringify(cardList));
+
   }
   function changeQuantity(key, quantity){
     if(quantity == 0){
