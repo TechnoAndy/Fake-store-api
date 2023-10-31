@@ -107,7 +107,7 @@ function addToCard(key) {
           value.quantity = displayQuantity;
         }
 
-        totalPrice = totalPrice + (value.price || 0) * displayQuantity; // Use a default value if price is missing
+        totalPrice = totalPrice + (value.price || 0) + displayQuantity -value.quantity ; // Use a default value if price is missing
         count = count + displayQuantity; // Use a default value if quantity is missing
 
         let newDiv = document.createElement('li');
@@ -121,6 +121,7 @@ function addToCard(key) {
             <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
           </div>`;
         listCard.appendChild(newDiv);
+        console.log(value.price);
       }
     });
     total.innerText = "Total: R" + totalPrice.toLocaleString();
@@ -135,7 +136,6 @@ function addToCard(key) {
     }else{
       cardList[key].quantity = quantity;
       cardList[key].price = quantity * products[key].price;
-      console.log(changeQuantity)
     }
     reloadCard();
   }
