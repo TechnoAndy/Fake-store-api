@@ -52,7 +52,9 @@ let products = [
   },
 ];
 
-let cardList = [];
+let cardList = JSON.parse(localStorage.getItem("CART"));
+reloadCard();
+
 function createCard(){
   products.forEach((value, key) => {
     let newDiv = document.createElement('div');
@@ -75,29 +77,31 @@ function addToCard(key){
     reloadCard();
   }
 
-  function reloadCard(){
+  function reloadCard() {
     listCard.innerHTML = ``;
     let count = 0;
     let totalPrice = 0;
-    cardList.forEach((value, key)=>{
-      totalPrice = totalPrice + value.price;
-      count = count + value.quantity;
-      if(value != null){
+    cardList.forEach((value, key) => {
+      if (value) { // Check if the value is not null or undefined
+        totalPrice = totalPrice + (value.price || 0); // Use a default value if price is missing
+        count = count + (value.quantity || 0); // Use a default value if quantity is missing
         let newDiv = document.createElement('li');
         newDiv.innerHTML = `
-          <div><img src="image/${value.image}"/></div>
-          <div>${value.name}</div>
-          <div>R${value.price.toLocaleString()}</div>
+          <div><img src="image/${value.image || ''}"/></div>
+          <div>${value.name || ''}</div>
+          <div>R${(value.price || 0).toLocaleString()}</div>
           <div>
             <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
             <div class="count">${value.quantity}</div>
             <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
           </div>`;
-          listCard.appendChild(newDiv);
+        listCard.appendChild(newDiv);
       }
-    })
+    });
     total.innerText = "Total: R" + totalPrice.toLocaleString();
     quantity.innerText = count;
+
+    localStorage.setItem("CART", JSON.stringify(cardList));
   }
   function changeQuantity(key, quantity){
     if(quantity == 0){
