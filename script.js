@@ -16,39 +16,39 @@ closeCart.addEventListener('click', ()=> {
 let products = [
   {
     id: 1,
-    name: 'Summer Dress',
+    name: 'Skater Maxi',
     image: '../images/1.png',
-    price: 6500
+    price: 850
   },
   {
     id: 2,
-    name: 'Summer Dress',
+    name: 'Daska Maxi',
     image: '../images/2.png',
-    price: 8500
+    price: 580
   },
   {
     id: 3,
-    name: 'Summer Dress',
+    name: 'Anarkali Maxi',
     image: '../images/3.png',
     price: 1200
   },
   {
-    id: 1,
-    name: 'Summer Dress',
+    id: 4,
+    name: 'Curved Maxi',
     image: '../images/4.png',
-    price: 6500
+    price: 900
   },
   {
-    id: 2,
-    name: 'Summer Dress',
+    id: 5,
+    name: 'Maya Petite',
     image: '../images/5.png',
-    price: 8500
+    price: 1500
   },
   {
-    id: 3,
-    name: 'Summer Dress',
+    id: 6,
+    name: 'Satin Maxi',
     image: '../images/6.png',
-    price: 1200
+    price: 850
   },
 ];
 
@@ -60,7 +60,7 @@ function createCard(){
     newDiv.innerHTML = `
     <img src= "image/${value.image}">
     <div class="title">${value.name}</div>
-    <div class="price">${value.price.toLocaleString()}</div>
+    <div class="price">R${value.price.toLocaleString()}</div>
     <button onclick="addToCard(${key})">Add To Cart</button>`;
     list.appendChild(newDiv);
   })
@@ -71,7 +71,6 @@ function addToCard(key){
   if(cardList[key] == null){
       cardList[key] = JSON.parse(JSON.stringify(products[key]));
       cardList[key].quantity = 1;
-
     }
     reloadCard();
   }
@@ -97,7 +96,7 @@ function addToCard(key){
           listCard.appendChild(newDiv);
       }
     })
-    total.innerText = totalPrice.toLocaleString();
+    total.innerText = "Total: R" + totalPrice.toLocaleString();
     quantity.innerText = count;
   }
   function changeQuantity(key, quantity){
@@ -110,4 +109,5 @@ function addToCard(key){
     }
     reloadCard();
   }
+
 

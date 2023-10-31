@@ -19,7 +19,8 @@ body {
   height: 80px;
   width: 80%;
   background-color: #333;
-  border-radius: 3px;
+  border-radius: 5px;
+  border: 4px solid #eb3484;
   margin: 30px 0;
   color: white;
   padding: 1rem;
@@ -33,82 +34,6 @@ body {
   font-size: 2rem;
   font-weight: bold;
   font-family: 'Outfit', sans-serif;
-}
-
-.productsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 70%;
-  margin: 0 auto;
-  gap: 40px;
-}
-
-#Container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.product-card {
-  border: 3px solid black;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  width: 20vw;
-  height: 40vh;
-  box-shadow: 0 50px 50px #757676;
-}
-
-.product-card button {
-  background-color: #333;
-  border: 2px solid;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 16px;
-  padding: 0.5rem 0.5rem;
-}
-
-.product-card img {
-  max-width: 80vw;
-  max-height: 25vh;
-}
-
-.product-card .title .price{
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 10px 0px;
-}
-
-/* Cart Section */
-.sidebar{
-  position: fixed;
-  top:0;
-  left: 100%;
-  width: 500px;
-  height: 100vh;
-  background-color: #fff ;
-  display: grid;
-  grid-template-rows:  1fr ;
-  background: rgba(236, 240, 241, 0.9);
-}
-
-.active .sidebar{
-  left: calc(100% - 500px);
-}
-
-.active .cart{
-  transform: translateX(-100px);
-}
-
-.head {
-  background-color: #333;
-  border-radius: 10px;
-  height: 50px;
-  padding: 10px;
-  font-size: 22px;
-  text-align: center;
-  color: white;
 }
 
 .cart {
@@ -131,45 +56,98 @@ body {
 
 .cart p {
   font-size: 16px;
-  background-color: red;
+  background-color: #eb3484;
   color: white;
-  border-radius: 22px;
-  height: 20px;
-  width: 22px;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.checkOut {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.productsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+#Container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.checkOut div{
-  background-color: #E8BC0E;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  cursor: pointer;
+.product-card {
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  width: 20vw;
+  height: 40vh;
+  box-shadow: 0 50px 50px #757676;
 }
 
-.checkOut div:nth-child(2){
-  background-color: #1C1F25;
+.product-card button {
+  background-color: #333;
+  border: 2px solid #eb3484;
+  border-radius: 10px;
   color: #fff;
+  font-size: 16px;
+  padding: 0.5rem 0.5rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.product-card img {
+  max-width: 80vw;
+  max-height: 25vh;
+}
+
+.product-card .title .price{
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+/* Cart Section */
+.sidebar{
+  position: absolute;
+  top:0;
+  left: 100%;
+  width: 500px;
+  height: 100vh;
+  background-color: #fff ;
+  display: grid;
+  grid-template-rows:  1fr ;
+  background: rgba(236, 240, 241, 0.9);
+  overflow: auto;
+}
+
+.active .sidebar{
+  left: calc(100% - 500px);
+}
+
+.active .cart{
+  transform: translateX(-300px);
+}
+
+.head {
+  background-color: #333;
+  border: 4px solid #eb3484;
+  height: 50px;
+  padding: 10px;
+  font-size: 22px;
+  text-align: center;
+  color: white;
 }
 
 .listCard li{
   display: grid;
-  grid-template-columns: 100px repeat(3, 1fr);
-  row-gap: 10px;
-  margin-bottom: 20px;
+  grid-template-columns: 150px repeat(3, 1fr);
+  margin: 10px 5px;
+  overflow: auto;
 }
 
 .listCard li div{
@@ -179,13 +157,16 @@ body {
 }
 
 .listCard li img{
-  width: 90%;
+  width: 100%;
+  border: 1px solid #eb3484;
+  border-radius: 25%;
 }
 
 .listCard button{
   width: auto;
-  background-color: rgb(189, 187, 187);
-  border: none;
+  background-color: #fff;
+  border: 1px solid #eb3484;
+  border-radius: 50%;
   padding: 2px 5px;
 }
 
@@ -193,3 +174,29 @@ body {
   margin: 0 10px;
 }
 
+.checkOut {
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: (2, 1fr);
+  border: 4px solid #eb3484;
+
+}
+
+.checkOut div{
+  background-color: #fff;
+  border: 2px solid #1C1F25;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.checkOut div:nth-child(2){
+  background-color: #1C1F25;
+  color: #fff;
+}
