@@ -18,14 +18,14 @@ let products = [
     id: 1,
     name: 'Skater Maxi',
     image: '../images/1.png',
-    price: 850,
+    price: 800,
     instock: 2
   },
   {
     id: 2,
     name: 'Daska Maxi',
     image: '../images/2.png',
-    price: 580,
+    price: 500,
     instock: 5
   },
   {
@@ -53,7 +53,7 @@ let products = [
     id: 6,
     name: 'Satin Maxi',
     image: '../images/6.png',
-    price: 850,
+    price: 800,
     instock: 15
   },
 ];
@@ -107,25 +107,24 @@ function addToCard(key) {
           value.quantity = displayQuantity;
         }
 
-        totalPrice = totalPrice + (value.price || 0) + displayQuantity -value.quantity ; // Use a default value if price is missing
+        totalPrice = totalPrice + (displayQuantity * products[key].price); // Use a default value if price is missing
         count = count + displayQuantity; // Use a default value if quantity is missing
 
         let newDiv = document.createElement('li');
         newDiv.innerHTML = `
-          <div><img src="image/${value.image || ''}"/></div>
-          <div>${value.name || ''}</div>
-          <div>R${(value.price || 0).toLocaleString()}</div>
+          <div><img src="image/${products[key].image || ''}"/></div>
+          <div>${products[key].name || ''}</div>
+          <div>R${(products[key].price || 0).toLocaleString()}</div>
           <div>
             <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
             <div class="count">${value.quantity}</div>
             <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
           </div>`;
         listCard.appendChild(newDiv);
-        console.log(value.price);
       }
     });
-    total.innerText = "Total: R" + totalPrice.toLocaleString();
     quantity.innerText = count;
+    total.innerText = "Total: R" + totalPrice.toLocaleString();
 
     localStorage.setItem("CART", JSON.stringify(cardList));
 
@@ -139,5 +138,3 @@ function addToCard(key) {
     }
     reloadCard();
   }
-
-
