@@ -113,8 +113,8 @@ function addToCard(key) {
         let newDiv = document.createElement('li');
         newDiv.innerHTML = `
           <div><img src="image/${products[key].image || ''}"/></div>
-          <div>${products[key].name || ''}</div>
-          <div>R${(products[key].price || 0).toLocaleString()}</div>
+          <div class="name"  >${products[key].name || ''}</div>
+          <div class="price">R${(products[key].price || 0).toLocaleString()}</div>
           <div>
             <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
             <div class="count">${value.quantity}</div>
