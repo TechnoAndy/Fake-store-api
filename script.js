@@ -58,7 +58,7 @@ let products = [
   },
 ];
 
-let cardList = JSON.parse(localStorage.getItem("CART"));
+let cardList = JSON.parse(localStorage.getItem("CART")) || [] ;
 reloadCard();
 
 function createCard(){
